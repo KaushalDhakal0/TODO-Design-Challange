@@ -23,10 +23,6 @@ const TopComponent = () => {
   );
 };
 
-const RightComponent = () => {
-  return <div className="tw-w-3/4">Second</div>;
-};
-
 const LeftTop = () => {
   return (
     <div className="tw-flex tw-flex-col">
@@ -169,11 +165,11 @@ const LeftBottom = () => {
       </div>
       <div className="tw-my-3 tw-flex tw-flex-row tw-justify-between tw-text-gray-600 tw-mr-2">
         <div className="tw-flex tw-justify-start">
-            <div className="tw-p-6 tw-rounded-full tw-bg-gray-700"></div>
-            <div className="tw-flex tw-flex-col tw-ml-3">
-                <div className="tw-font-bold">Kasun Tharanga</div>
-                <div className="tw-text-sm">kasun@gmail.com</div>
-            </div>
+          <div className="tw-p-6 tw-rounded-full tw-bg-gray-700"></div>
+          <div className="tw-flex tw-flex-col tw-ml-3">
+            <div className="tw-font-bold">Kasun Tharanga</div>
+            <div className="tw-text-sm">kasun@gmail.com</div>
+          </div>
         </div>
         <div>
           <svg
@@ -194,4 +190,136 @@ const LeftBottom = () => {
       </div>
     </div>
   );
+};
+
+const RightComponent = () => {
+  return (
+    <div className="tw-w-3/4 tw-flex tw-flex-col tw-p-5">
+      <RightHeader />
+      <SecondaryHeaderTop />
+      <FirstTable />
+      <SecondaryHeaderBottom />
+      <SecondTable />
+    </div>
+  );
+};
+
+const RightHeader = () => {
+  return (
+    <div className="tw-w-full tw-flex tw-justify-between">
+      <div className="tw-text-2xl tw-font-bold tw-text-gray-700">Tasks</div>
+      <div className="tw-flex tw-flex-row tw-gap-1 tw-cursor-pointer">
+        <div className="tw-p-3 tw-bg-blue-200 tw-rounded-md tw-text-blue-700 tw-font-semibold tw-text-sm tw-flex tw-flex-row">
+          <div className="tw-mr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="tw-w-5 tw-h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
+              />
+            </svg>
+          </div>
+          <div>Filters</div>
+        </div>
+        <div className="tw-p-3 tw-bg-blue-500 tw-rounded-md tw-text-white tw-font-semibold tw-text-sm tw-flex tw-flex-row">
+          <div className="tw-mr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={4}
+              stroke="currentColor"
+              className="tw-w-5 tw-h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </div>
+          <div>Add New Task</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SecondaryHeaderTop = () => {
+  return (
+    <div className="tw-flex tw-justify-between tw-my-3">
+      <div className="tw-flex tw-flex-col">
+        <div className="tw-font-bold tw-mb-1">Today</div>
+        <div className="tw-text-sm tw-text-gray-600">
+          Task List (26-12-2023)
+        </div>
+      </div>
+      <div className="search-component">
+        <div className="search-icon">
+          <SearchIcon />
+        </div>
+        <div className="search-input">
+          <input
+            className="tw-px-2 tw-py-1 tw-w-full tw-border-solid tw-outline-none"
+            type="text"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+const FirstTable = () => {
+  return (
+    <div>
+      <table className="tw-w-full tw-border tw-border-collapse">
+        <thead className="tw-text-gray-500">
+          <tr>
+            <th className=" tw-p-1 tw-flex tw-items-center tw-ml-3">
+              <div className="tw-pr-2">
+                <input className="tw-rounded-md" type="checkbox" />
+              </div>
+              <div className="tw-pr-2">Task</div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={3}
+                  stroke="currentColor"
+                  className="tw-w-3 tw-h-3"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                  />
+                </svg>
+              </div>
+            </th>
+            <th className="tw-border tw-p-1 tw-w-[30%]">Progress</th>
+            <th className="tw-border tw-p-1">Last worked</th>
+            <th className="tw-border tw-p-1">End date</th>
+            <th className="tw-border tw-p-1">Status</th>
+            <th className="tw-border tw-p-1">Actions</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  );
+};
+
+const SecondTable = () => {
+  return <div>Second Table</div>;
+};
+
+const SecondaryHeaderBottom = () => {
+  return <div> Secondary Header Bottom</div>;
 };
