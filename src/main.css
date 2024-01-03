@@ -1,0 +1,13 @@
+.search-component {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-icon {
+    color: #555; /* Color for the search icon */
+  }
