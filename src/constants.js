@@ -17,7 +17,7 @@ export const dummyDataTop = [
         progress: 35,
         status:{
             name:"ToDo",
-            color:"orange"
+            color:"blue"
         }
     
     },
@@ -28,7 +28,7 @@ export const dummyDataTop = [
         progress: 100,
         status:{
             name:"Done",
-            color:"orange"
+            color:"blue"
         }
     
     }
@@ -42,7 +42,7 @@ export const dummyDataTopSecond = [
         progress: 0,
         status:{
             name:"ToDo",
-            color:"orange"
+            color:"blue"
         }
     
     },
@@ -53,7 +53,7 @@ export const dummyDataTopSecond = [
         progress: 0,
         status:{
             name:"ToDo",
-            color:"orange"
+            color:"blue"
         }
     
     },
@@ -64,7 +64,7 @@ export const dummyDataTopSecond = [
         progress: 0,
         status:{
             name:"ToDo",
-            color:"orange"
+            color:"blue"
         }
     
     }
