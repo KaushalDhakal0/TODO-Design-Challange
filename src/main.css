@@ -11,3 +11,18 @@
   .search-icon {
     color: #555; /* Color for the search icon */
   }
+
+  .progress-bar {
+    width: 90%;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: #3498db; /* Set your desired color here */
+    transition: width 0.3s ease;
+}

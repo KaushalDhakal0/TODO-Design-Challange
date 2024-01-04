@@ -1,5 +1,11 @@
 import React from "react";
 import SearchIcon from "../Icons/SearchIcons";
+import { getRandomDateFormatted } from "../utils";
+import { DeleteIcon } from "./DeleteIcon";
+import { EditIcon } from "./EditIcon";
+import { dummyDataTop, dummyDataTopSecond } from "../constants";
+const startDate = new Date(2021, Math.floor(Math.random() * 12) + 1, 1); // January 1, 2023
+const endDate = new Date(2024, Math.floor(Math.random() * 12) + 1, 31);
 
 const LandingPage = () => {
   return (
@@ -281,7 +287,7 @@ const FirstTable = () => {
     <div>
       <table className="tw-w-full tw-border tw-border-collapse">
         <thead className="tw-text-gray-500">
-          <tr>
+          <tr className="tw-border-b">
             <th className=" tw-p-1 tw-flex tw-items-center tw-ml-3">
               <div className="tw-pr-2">
                 <input className="tw-rounded-md" type="checkbox" />
@@ -311,15 +317,156 @@ const FirstTable = () => {
             <th className="tw-border tw-p-1">Actions</th>
           </tr>
         </thead>
+        <tbody>
+          {dummyDataTop.map((val) => (
+            <>
+              <tr key={val.id}>
+                <td>
+                  <div className="tw-flex tw-flex-row tw-justify-start tw-items-center tw-ml-2 tw-p-2">
+                    <div>
+                      <input
+                        className="tw-rounded-md tw-mr-2"
+                        type="checkbox"
+                      />
+                    </div>
+                    <div className="tw-w-6 tw-h-6 tw-bg-gray-700 tw-rounded-full tw-mr-1"></div>
+                    <div className="tw-flex tw-flex-col">
+                      <div className="tw-text-gray-800">{val.name}</div>
+                      <div className="tw-text-sm tw-text-gray-500">
+                        {val.desc}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="progress-bar tw-ml-2">
+                    <div
+                      className="progress-bar-fill"
+                      style={{ width: `${val.progress}%` }}
+                    ></div>
+                  </div>
+                </td>
+                <td>{getRandomDateFormatted(startDate, endDate)}</td>
+                <td>{getRandomDateFormatted(startDate, endDate)}</td>
+                <td>
+                  <div
+                    className={` tw-text-center tw-p-1 tw-w-[60%] tw-text-sm tw-mx-auto tw-bg-${val.status.color}-500 tw-rounded-full tw-text-white tw-px-2`}
+                  >
+                    {val.status.name}
+                  </div>
+                </td>
+                <td>
+                  <div className="tw-flex tw-justify-center tw-gap-2">
+                    <DeleteIcon />
+                    <EditIcon />
+                  </div>
+                </td>
+              </tr>
+            </>
+          ))}
+        </tbody>
       </table>
     </div>
   );
 };
 
 const SecondTable = () => {
-  return <div>Second Table</div>;
+  return (
+    <div>
+      <table className="tw-w-full tw-border tw-border-collapse">
+        <thead className="tw-text-gray-500">
+          <tr className="tw-border-b">
+            <th className=" tw-p-1 tw-flex tw-items-center tw-ml-3">
+              <div className="tw-pr-2">
+                <input className="tw-rounded-md" type="checkbox" />
+              </div>
+              <div className="tw-pr-2">Task</div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={3}
+                  stroke="currentColor"
+                  className="tw-w-3 tw-h-3"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                  />
+                </svg>
+              </div>
+            </th>
+            <th className="tw-border tw-p-1 tw-w-[30%]">Progress</th>
+            <th className="tw-border tw-p-1">Last worked</th>
+            <th className="tw-border tw-p-1">End date</th>
+            <th className="tw-border tw-p-1">Status</th>
+            <th className="tw-border tw-p-1">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dummyDataTopSecond.map((val) => (
+            <>
+              <tr key={val.id}>
+                <td>
+                  <div className="tw-flex tw-flex-row tw-justify-start tw-items-center tw-ml-2 tw-p-2">
+                    <div>
+                      <input
+                        className="tw-rounded-md tw-mr-2"
+                        type="checkbox"
+                      />
+                    </div>
+                    <div className="tw-w-6 tw-h-6 tw-bg-gray-700 tw-rounded-full tw-mr-1"></div>
+                    <div className="tw-flex tw-flex-col">
+                      <div className="tw-text-gray-800">{val.name}</div>
+                      <div className="tw-text-sm tw-text-gray-500">
+                        {val.desc}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="progress-bar tw-ml-2">
+                    <div
+                      className="progress-bar-fill"
+                      style={{ width: `${val.progress}%` }}
+                    ></div>
+                  </div>
+                </td>
+                <td>-</td>
+                <td>{getRandomDateFormatted(startDate, endDate)}</td>
+                <td>
+                  <div
+                    className={` tw-text-center tw-p-1 tw-w-[60%] tw-text-sm tw-mx-auto tw-bg-${val.status.color}-500 tw-rounded-full tw-text-white tw-px-2`}
+                  >
+                    {val.status.name}
+                  </div>
+                </td>
+                <td>
+                  <div className="tw-flex tw-justify-center tw-gap-2">
+                    <DeleteIcon />
+                    <EditIcon />
+                  </div>
+                </td>
+              </tr>
+            </>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 const SecondaryHeaderBottom = () => {
-  return <div> Secondary Header Bottom</div>;
+  return (
+    <div className="tw-flex tw-justify-start tw-my-4">
+      <div className="tw-flex tw-flex-col">
+        <div className="tw-font-bold tw-mb-1">Upcoming</div>
+        <div className="tw-text-sm tw-text-gray-600">
+          Task List (26-12-2023)
+        </div>
+      </div>
+    </div>
+  );
 };
